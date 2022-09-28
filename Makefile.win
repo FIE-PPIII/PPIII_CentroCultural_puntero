@@ -1,0 +1,52 @@
+# Project: CentroCultural
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = CentroCultural.o Cliente.o Material.o Disco.o Libro.o Fecha.o Prestamo.o PrestamoDisco.o PrestamoLibro.o
+LINKOBJ  = CentroCultural.o Cliente.o Material.o Disco.o Libro.o Fecha.o Prestamo.o PrestamoDisco.o PrestamoLibro.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = CentroCultural.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+CentroCultural.o: CentroCultural.cpp
+	$(CPP) -c CentroCultural.cpp -o CentroCultural.o $(CXXFLAGS)
+
+Cliente.o: Cliente.cpp
+	$(CPP) -c Cliente.cpp -o Cliente.o $(CXXFLAGS)
+
+Material.o: Material.cpp
+	$(CPP) -c Material.cpp -o Material.o $(CXXFLAGS)
+
+Disco.o: Disco.cpp
+	$(CPP) -c Disco.cpp -o Disco.o $(CXXFLAGS)
+
+Libro.o: Libro.cpp
+	$(CPP) -c Libro.cpp -o Libro.o $(CXXFLAGS)
+
+Fecha.o: Fecha.cpp
+	$(CPP) -c Fecha.cpp -o Fecha.o $(CXXFLAGS)
+
+Prestamo.o: Prestamo.cpp
+	$(CPP) -c Prestamo.cpp -o Prestamo.o $(CXXFLAGS)
+
+PrestamoDisco.o: PrestamoDisco.cpp
+	$(CPP) -c PrestamoDisco.cpp -o PrestamoDisco.o $(CXXFLAGS)
+
+PrestamoLibro.o: PrestamoLibro.cpp
+	$(CPP) -c PrestamoLibro.cpp -o PrestamoLibro.o $(CXXFLAGS)
